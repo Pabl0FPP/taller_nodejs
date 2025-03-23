@@ -9,7 +9,7 @@ export interface FraganceDocument extends Document {
 }
 
 const fraganceSchema = new Schema({
-    id_fragance: { type: String, required: true },
+    id_fragance: { type: String, unique: true, index: true, required: true },
     name: { type: String, required: true },
     description: { type: String, required: true },
     color: { type: String, required: true },

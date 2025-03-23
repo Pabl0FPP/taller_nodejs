@@ -9,7 +9,7 @@ export interface ContainerDocument extends Document {
 }
 
 const containerSchema = new Schema({
-    id_container: { type: String, required: true },
+    id_container: { type: String, unique: true, index: true, required: true },
     material: { type: String, required: true },
     height: { type: Number, required: true },
     width: { type: Number, required: true },

@@ -1,2 +1,5 @@
 export * from './user.model'
-export * from './role.model'	
+export * from './role.model'
+export * from './fragance.model'
+export * from './container.model'
+export * from './candle.model'	

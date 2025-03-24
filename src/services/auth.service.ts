@@ -20,7 +20,7 @@ class AuthService{
                     userInput.password = await bcrypt.hash(userInput.password, 10);
     
                 const role = await RoleModel.findOne({name: "client"});
-                const user: UserDocument = await UserModel.create({...userInput, roles:[role?._id]}); 
+                const user: UserDocument = await UserModel.create({userInput, roles:[role?._id]}); 
                 await user.populate('roles');
 
                 return user;
@@ -60,7 +60,8 @@ class AuthService{
                 user: {
                     id: user.id,
                     email: user.email,
-                    name: user.name
+                    name: user.name,
+                    roles: user.roles.map(role => role.name)
                 }},
                 process.env.JWT_SECRET || "secret", 
                 {expiresIn: "10m"});

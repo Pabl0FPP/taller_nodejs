@@ -22,7 +22,7 @@ class UserService{
 
     public  async findByEmail(email: string): Promise<UserDocument | null>{
         try {
-            const user = await UserModel.findOne({email});
+            const user = await UserModel.findOne({email}).populate('roles');
             return user;
         } catch (error) {
             throw error;
@@ -31,7 +31,7 @@ class UserService{
 
     public  async findById(id: string): Promise<UserDocument | null>{
         try {
-            const user = await UserModel.findById(id);
+            const user = await UserModel.findById(id).populate('roles');
             return user;
         } catch (error) {
             throw error;
@@ -40,7 +40,7 @@ class UserService{
 
     public  async getUsers(): Promise<UserDocument[]>{
         try {
-            const users: UserDocument[] = await UserModel.find();
+            const users: UserDocument[] = await UserModel.find().populate('roles');
             return users;
         } catch (error) {
             throw error;
@@ -49,7 +49,7 @@ class UserService{
 
     public  async updateUser(id: string, userInput: UserInputUpdate): Promise<UserDocument | null>{
         try {
-            const user: UserDocument | null = await UserModel.findOneAndUpdate({_id: id}, userInput, { returnOriginal: false });
+            const user: UserDocument | null = await UserModel.findOneAndUpdate({_id: id}, userInput, { returnOriginal: false }).populate('roles');
             if(user)
                 user.password = "";
             return user;

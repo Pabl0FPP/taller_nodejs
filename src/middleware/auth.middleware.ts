@@ -31,5 +31,7 @@ export const isAdmin = (req: Request, res: Response, next: NextFunction) => {
     if (user.roles.includes("admin")) {
         next();
     }
-    res.status(401).json({ message: "Not Authorized" });
+    else {
+        res.status(401).json({ message: "Not Authorized" });
+    }
 }

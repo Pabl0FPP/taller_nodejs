@@ -6,9 +6,6 @@ export interface RoleDocument extends Document {
 
 const roleSchema = new Schema({
     name: String
-}, {
-    versionKey: false
-
 })
 
 export const RoleModel = model<RoleDocument>("Role", roleSchema)

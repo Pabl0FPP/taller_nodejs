@@ -1,5 +1,5 @@
 import { UserInput, UserInputUpdate } from "../interfaces";
-import { UserDocument, UserModel } from "../models/user.model";
+import { UserDocument, UserModel, RoleModel } from "../models";
 import bcrypt from "bcrypt";
 
 class UserService{
@@ -13,7 +13,10 @@ class UserService{
             if (userInput.password) 
                 userInput.password = await bcrypt.hash(userInput.password, 10);
 
-            const user: UserDocument = await UserModel.create(userInput); 
+            const role = await RoleModel.findOne({name: "client"});
+            const user: UserDocument = await UserModel.create({...userInput, roles:[role?._id]}); 
+            await user.populate('roles');
+
             return user;
         } catch (error) {
             throw error;

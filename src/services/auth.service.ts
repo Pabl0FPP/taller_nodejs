@@ -1,12 +1,9 @@
-import { UserLogin, UserLoginResponse } from "../interfaces";
+import { UserLogin, UserLoginResponse, UserInput } from "../interfaces";
 import { userService } from "./user.service";
 import bcrypt from "bcrypt";
 import { AuthError } from "../exceptions";
-import { UserDocument } from "../models";
 import jwt from "jsonwebtoken";
-import { UserInput } from "../interfaces";
-import { UserModel } from "../models";
-import { RoleModel } from "../models";
+import { UserModel, UserDocument, RoleModel } from "../models";
 
 class AuthService{
 
@@ -20,7 +17,7 @@ class AuthService{
                     userInput.password = await bcrypt.hash(userInput.password, 10);
     
                 const role = await RoleModel.findOne({name: "client"});
-                const user: UserDocument = await UserModel.create({userInput, roles:[role?._id]}); 
+                const user: UserDocument = await UserModel.create({...userInput, roles:[role?._id]}); 
                 await user.populate('roles');
 
                 return user;

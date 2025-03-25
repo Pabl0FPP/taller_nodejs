@@ -1,11 +1,10 @@
 import { Schema, model, Document } from "mongoose";
+import { FraganceInput } from "../interfaces";
 
-export interface FraganceDocument extends Document {
-    id_fragance: String;
-    name: string,
-    description: string,
-    color: string,
-    image_url: string;
+export interface FraganceDocument extends FraganceInput, Document {
+    createdAt: Date,
+    deletedAt: Date,
+    updatedAt: Date;
 }
 
 const fraganceSchema = new Schema({

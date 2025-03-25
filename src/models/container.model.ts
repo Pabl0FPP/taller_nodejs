@@ -1,11 +1,10 @@
 import { Schema, model, Document } from "mongoose";
+import { ContainerInput } from "../interfaces";
 
-export interface ContainerDocument extends Document {
-    id_container: string,
-    material: string,
-    height: number,
-    width: number,
-    description: string;
+export interface ContainerDocument extends ContainerInput, Document {
+    createdAt: Date,
+    deletedAt: Date,
+    updatedAt: Date;
 }
 
 const containerSchema = new Schema({

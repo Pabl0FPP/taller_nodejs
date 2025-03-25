@@ -7,6 +7,7 @@ import { createRoles } from './lib/initialSetup';
 dotenv.config();
 
 const app: Express = express();
+const request = require('supertest');
 createRoles();
 
 app.use(express.json());
@@ -16,4 +17,4 @@ app.use('/user', userRouter);
 app.use('/auth', authRouter);
 
 
-export { app, db };
+export { app, db, request };

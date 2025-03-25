@@ -1,6 +1,7 @@
 import { RoleModel, RoleDocument } from "../models";
 
 export const createRoles = async (): Promise<void> => {
+    if (process.env.NODE_ENV !== 'test') {
     try {
         const count: number = await RoleModel.estimatedDocumentCount();
 
@@ -15,4 +16,5 @@ export const createRoles = async (): Promise<void> => {
     } catch (error) {
         console.error(error);
     }
+}
 }

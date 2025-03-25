@@ -50,20 +50,30 @@ class UserService{
         }
     }    
 
-    public  async updateUser(id: string, userInput: UserInputUpdate): Promise<UserDocument | null>{
+
+    public async updateUser(id: string, userInput: UserInputUpdate): Promise<UserDocument | null> {
         try {
-            const user: UserDocument | null = await UserModel.findOneAndUpdate({_id: id}, userInput, { returnOriginal: false }).populate('roles');
-            if(user)
-                user.password = "";
+            const user: UserDocument | null = await UserModel.findOneAndUpdate(
+                { _id: id },
+                userInput,
+                { returnOriginal: false }
+            ).populate('roles');
+            if (!user) {
+                throw new Error('User not found');
+            }
+            user.password = "";
             return user;
         } catch (error) {
             throw error;
         }
     }
 
-    public  async deleteUser(id: string): Promise<UserDocument | null>{
+    public async deleteUser(id: string): Promise<UserDocument | null> {
         try {
             const user: UserDocument | null = await UserModel.findByIdAndDelete(id);
+            if (!user) {
+                throw new Error('User not found');
+            }
             return user;
         } catch (error) {
             throw error;

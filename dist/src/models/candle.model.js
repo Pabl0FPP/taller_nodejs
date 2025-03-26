@@ -3,7 +3,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.CandleModel = void 0;
 const mongoose_1 = require("mongoose");
 const candleSchema = new mongoose_1.Schema({
-    id_candle: { type: String, unique: true, index: true, required: true },
     id_container: {
         type: mongoose_1.Schema.Types.ObjectId,
         ref: "Container",

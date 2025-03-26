@@ -19,6 +19,7 @@ app.use('/auth', routes_1.authRouter);
 app.use('/container', routes_1.containerRouter);
 app.use('/fragance', routes_1.fraganceRouter);
 app.use('/candle', routes_1.candleRouter);
+app.use('/cart', routes_1.shopcartRouter);
 connectionDB_1.db.then(() => app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 }));

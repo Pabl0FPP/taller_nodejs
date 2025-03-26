@@ -18,3 +18,4 @@ __exportStar(require("./user.interface"), exports);
 __exportStar(require("./auth.interface"), exports);
 __exportStar(require("./container.interface"), exports);
 __exportStar(require("./fragance.interface"), exports);
+__exportStar(require("./candle.interface"), exports);

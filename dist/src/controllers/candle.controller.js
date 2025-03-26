@@ -9,105 +9,50 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.candleController = exports.CandleController = void 0;
-const candle_service_1 = require("../services/candle.service");
+exports.candleController = void 0;
+const services_1 = require("../services");
 class CandleController {
     createCandle(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            var _a;
             try {
-                const userId = (_a = req.user) === null || _a === void 0 ? void 0 : _a._id;
-                if (!userId) {
-                    res.status(401).json({ message: "Unauthorized" });
-                    return;
-                }
-                const candle = yield candle_service_1.candleService.createCandle(req.body, userId);
-                res.status(201).json(candle);
+                const userId = req.body.loggedUser.id;
+                const candleInput = req.body;
+                // Crear la vela personalizada
+                const newCandle = yield services_1.candleService.createCandle(candleInput);
+                // Agregar la vela al carrito del usuario con cantidad 1 por defecto
+                const cart = yield services_1.shopcartService.addItemToCart(userId, {
+                    id_candle: newCandle._id,
+                    quantity: 1
+                });
+                res.status(201).json({
+                    candle: newCandle,
+                    cart: cart
+                });
             }
             catch (error) {
-                res.status(500).json({ error });
+                if (error instanceof ReferenceError) {
+                    res.status(400).json({ message: "Error creating candle: " + error.message });
+                    return;
+                }
+                res.status(500).json(error);
             }
         });
     }
-    getCandles(req, res) {
+    getCandle(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            var _a;
             try {
-                const userId = (_a = req.user) === null || _a === void 0 ? void 0 : _a._id;
-                if (!userId) {
-                    res.status(401).json({ message: "Unauthorized" });
-                    return;
-                }
-                const candles = yield candle_service_1.candleService.getCandles(userId);
-                res.status(200).json(candles);
-            }
-            catch (error) {
-                res.status(500).json({ error });
-            }
-        });
-    }
-    getCandleById(req, res) {
-        return __awaiter(this, void 0, void 0, function* () {
-            var _a;
-            try {
-                const userId = (_a = req.user) === null || _a === void 0 ? void 0 : _a._id;
-                if (!userId) {
-                    res.status(401).json({ message: "Unauthorized" });
-                    return;
-                }
-                const candleId = req.params.id;
-                const candle = yield candle_service_1.candleService.getCandleById(userId, candleId);
+                const id = req.params.id;
+                const candle = yield services_1.candleService.getCandleById(id);
                 if (!candle) {
-                    res.status(404).json({ message: `Candle with id ${candleId} not found in user's cart` });
+                    res.status(404).json({ message: `Candle with id ${id} not found` });
                     return;
                 }
-                res.status(200).json(candle);
+                res.json(candle);
             }
             catch (error) {
-                res.status(500).json({ error });
-            }
-        });
-    }
-    updateCandle(req, res) {
-        return __awaiter(this, void 0, void 0, function* () {
-            var _a;
-            try {
-                const userId = (_a = req.user) === null || _a === void 0 ? void 0 : _a._id;
-                if (!userId) {
-                    res.status(401).json({ message: "Unauthorized" });
-                    return;
-                }
-                const candleId = req.params.id;
-                const candle = yield candle_service_1.candleService.updateCandle(userId, candleId, req.body);
-                if (!candle) {
-                    res.status(404).json({ message: `Candle with id ${candleId} not found in user's cart` });
-                    return;
-                }
-                res.status(200).json(candle);
-            }
-            catch (error) {
-                res.status(500).json({ error });
-            }
-        });
-    }
-    deleteCandle(req, res) {
-        return __awaiter(this, void 0, void 0, function* () {
-            var _a;
-            try {
-                const userId = (_a = req.user) === null || _a === void 0 ? void 0 : _a._id;
-                if (!userId) {
-                    res.status(401).json({ message: "Unauthorized" });
-                    return;
-                }
-                const candleId = req.params.id;
-                yield candle_service_1.candleService.deleteCandle(userId, candleId);
-                res.status(200).json({ message: "Candle deleted successfully from user's cart" });
-            }
-            catch (error) {
-                res.status(500).json({ error });
+                res.status(500).json(error);
             }
         });
     }
 }
-exports.CandleController = CandleController;
 exports.candleController = new CandleController();

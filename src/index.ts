@@ -1,6 +1,6 @@
 import express, { Express, Request, Response } from 'express';
 import dotenv from 'dotenv';
-import { userRouter, authRouter, containerRouter, fraganceRouter, candleRouter} from './routes';
+import { userRouter, authRouter, containerRouter, fraganceRouter, candleRouter, shopcartRouter} from './routes';
 import { db } from "./lib/connectionDB";
 import { createRoles } from './lib/initialSetup';
 
@@ -18,7 +18,7 @@ app.use('/auth', authRouter);
 app.use('/container', containerRouter);
 app.use('/fragance', fraganceRouter);
 app.use('/candle', candleRouter);
-
+app.use('/cart', shopcartRouter);
 
 db.then( () =>
     app.listen(port, () => {

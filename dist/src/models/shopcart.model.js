@@ -3,10 +3,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ShopCartModel = void 0;
 const mongoose_1 = require("mongoose");
 const shopCartSchema = new mongoose_1.Schema({
-    id_cart: { type: String, unique: true, index: true, required: true },
     id_user: { type: mongoose_1.Schema.Types.ObjectId, ref: "User", required: true },
     items: [{
-            _id: { type: mongoose_1.Schema.Types.ObjectId, ref: "CartItem" },
+            _id: { type: mongoose_1.Schema.Types.ObjectId, ref: "Candle" },
             quantity: { type: Number, required: true }
         }]
 }, { timestamps: true, collection: "shopcarts" });

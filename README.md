@@ -95,5 +95,5 @@ Estos endpoints requieren autenticación mediante un token JWT:
 
 ## Conclusiones y Reflexión
 
-Durante el desarrollo del proyecto, enfrentamos desafíos como la integración de **Mongoose** para manejar la base de datos no relacional y la implementación de un sistema de autenticación y roles. Sin embargo, logramos construir un sistema robusto y funcional.
+Durante el desarrollo del proyecto, enfrentamos desafíos como la integración de **Mongoose** para manejar la base de datos no relacional y la implementación de un sistema de autenticación y roles. Sin embargo, logramos construir un sistema robusto y funcional. Ademas de contar con otro tipo de dificultades como: guardado del id del item y acceso al id del usuario para el guardado del item en el carrito.
 

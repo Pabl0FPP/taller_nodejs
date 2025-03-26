@@ -5,6 +5,15 @@ module.exports = {
     collectCoverage: true,
     coverageDirectory: 'coverage',
     coverageReporters: ['text', 'lcov'],
-    testTimeout: 100000000
-
+    roots: ['<rootDir>/src', '<rootDir>/tests'],
+    moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
+    transform: {
+        '^.+\\.ts$': 'ts-jest',
+    },
+    testMatch: ['**/?(*.)+(spec|test).ts?(x)'],
+    globals: {
+        'ts-jest': {
+            tsconfig: 'tsconfig.json',
+        },
+    },
 };

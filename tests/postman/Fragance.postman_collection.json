@@ -1,0 +1,610 @@
+{
+	"info": {
+		"_postman_id": "7dd00224-5c18-4904-83cc-d0620272388f",
+		"name": "Fragance",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "35085580",
+		"_collection_link": "https://bold-station-900888.postman.co/workspace/taller-node~183a1e08-ab26-4289-88af-c61b23688210/collection/39348548-7dd00224-5c18-4904-83cc-d0620272388f?action=share&source=collection_link&creator=35085580"
+	},
+	"item": [
+		{
+			"name": "GetFragance",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}{{fragance_endpoint}}/67e394450b5e0ce61344d0f2",
+					"host": [
+						"{{base_url}}{{fragance_endpoint}}"
+					],
+					"path": [
+						"67e394450b5e0ce61344d0f2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GetFragance",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}{{fragance_endpoint}}/67e394450b5e0ce61344d0f2",
+							"host": [
+								"{{base_url}}{{fragance_endpoint}}"
+							],
+							"path": [
+								"67e394450b5e0ce61344d0f2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "215"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"d7-vbo7NnsYzPOoF7Srdj9EW1z/BTc\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 26 Mar 2025 14:04:36 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"67e394450b5e0ce61344d0f2\",\n    \"name\": \"fragance1\",\n    \"description\": \"es la fragance 1\",\n    \"color\": \"blue\",\n    \"image_url\": \"fragance1.jpg\",\n    \"createdAt\": \"2025-03-26T05:44:37.770Z\",\n    \"updatedAt\": \"2025-03-26T05:44:37.770Z\",\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "GetFragances",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}{{fragance_endpoint}}",
+					"host": [
+						"{{base_url}}{{fragance_endpoint}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GetFragances",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}{{fragance_endpoint}}",
+							"host": [
+								"{{base_url}}{{fragance_endpoint}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "433"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1b1-tAo8g6kXynfpx0zDMh+Sawr5acE\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 26 Mar 2025 13:55:55 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"_id\": \"67e394450b5e0ce61344d0f2\",\n        \"name\": \"fragance1\",\n        \"description\": \"es la fragance 1\",\n        \"color\": \"blue\",\n        \"image_url\": \"fragance1.jpg\",\n        \"createdAt\": \"2025-03-26T05:44:37.770Z\",\n        \"updatedAt\": \"2025-03-26T05:44:37.770Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"67e4075d4c76ed649154c878\",\n        \"name\": \"fragance2\",\n        \"description\": \"es la fragance 2\",\n        \"color\": \"cyan\",\n        \"image_url\": \"fragance1.jpg\",\n        \"createdAt\": \"2025-03-26T13:55:41.893Z\",\n        \"updatedAt\": \"2025-03-26T13:55:41.893Z\",\n        \"__v\": 0\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "CreateFragance",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"  pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"fragance2\",\r\n    \"description\": \"es la fragance 2\",\r\n    \"color\": \"cyan\",\r\n    \"image_url\": \"fragance1.jpg\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}{{fragance_endpoint}}",
+					"host": [
+						"{{base_url}}{{fragance_endpoint}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "CreateFragance",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"fragance2\",\r\n    \"description\": \"es la fragance 2\",\r\n    \"color\": \"cyan\",\r\n    \"image_url\": \"fragance1.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}{{fragance_endpoint}}",
+							"host": [
+								"{{base_url}}{{fragance_endpoint}}"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "215"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"d7-673XZyEGi9qYrSpJ0SrzO9y0gN8\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 26 Mar 2025 13:55:41 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"name\": \"fragance2\",\n    \"description\": \"es la fragance 2\",\n    \"color\": \"cyan\",\n    \"image_url\": \"fragance1.jpg\",\n    \"_id\": \"67e4075d4c76ed649154c878\",\n    \"createdAt\": \"2025-03-26T13:55:41.893Z\",\n    \"updatedAt\": \"2025-03-26T13:55:41.893Z\",\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "UpdateFragance",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"fragance1\",\r\n    \"description\": \"es la mejor\",\r\n    \"color\": \"blue\",\r\n    \"image_url\": \"fragance1.jpg\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}{{fragance_endpoint}}/67e394450b5e0ce61344d0f2",
+					"host": [
+						"{{base_url}}{{fragance_endpoint}}"
+					],
+					"path": [
+						"67e394450b5e0ce61344d0f2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "UpdateFragance",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"fragance1\",\r\n    \"description\": \"es la mejor\",\r\n    \"color\": \"blue\",\r\n    \"image_url\": \"fragance1.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}{{fragance_endpoint}}/67e394450b5e0ce61344d0f2",
+							"host": [
+								"{{base_url}}{{fragance_endpoint}}"
+							],
+							"path": [
+								"67e394450b5e0ce61344d0f2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "210"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"d2-oNjLcUtYl12eifi+cfPGnqwMCaQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 26 Mar 2025 14:08:42 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"67e394450b5e0ce61344d0f2\",\n    \"name\": \"fragance1\",\n    \"description\": \"es la mejor\",\n    \"color\": \"blue\",\n    \"image_url\": \"fragance1.jpg\",\n    \"createdAt\": \"2025-03-26T05:44:37.770Z\",\n    \"updatedAt\": \"2025-03-26T14:08:42.779Z\",\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "DeleteFragance",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {\r",
+							"    pm.response.to.have.status(204);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}{{fragance_endpoint}}/67e4075d4c76ed649154c878",
+					"host": [
+						"{{base_url}}{{fragance_endpoint}}"
+					],
+					"path": [
+						"67e4075d4c76ed649154c878"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "DeleteFragance",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}{{fragance_endpoint}}/67e4075d4c76ed649154c878",
+							"host": [
+								"{{base_url}}{{fragance_endpoint}}"
+							],
+							"path": [
+								"67e4075d4c76ed649154c878"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "215"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"d7-pzCM/dyGges46tUumRJKTarUcT0\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 26 Mar 2025 14:13:09 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"67e4075d4c76ed649154c878\",\n    \"name\": \"fragance2\",\n    \"description\": \"es la fragance 2\",\n    \"color\": \"cyan\",\n    \"image_url\": \"fragance1.jpg\",\n    \"createdAt\": \"2025-03-26T13:55:41.893Z\",\n    \"updatedAt\": \"2025-03-26T13:55:41.893Z\",\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "GetDeletedFragance",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}{{fragance_endpoint}}/67e4075d4c76ed649154c878",
+					"host": [
+						"{{base_url}}{{fragance_endpoint}}"
+					],
+					"path": [
+						"67e4075d4c76ed649154c878"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GetDeletedFragance",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}{{fragance_endpoint}}/67e4075d4c76ed649154c878",
+							"host": [
+								"{{base_url}}{{fragance_endpoint}}"
+							],
+							"path": [
+								"67e4075d4c76ed649154c878"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "65"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"41-oPwFw0rg5uWdxbx8CKNpGW/TY6w\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 26 Mar 2025 14:13:40 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Fragance with id 67e4075d4c76ed649154c878 not found\"\n}"
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{accessToken}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"const loginUrl = `${pm.collectionVariables.get(\"base_url\")}/auth/login`;\r",
+					"const loginPayload = {\r",
+					"    email: 'admin@gmail.com',\r",
+					"    password: '1234567890'\r",
+					"};\r",
+					"\r",
+					"// Realizar la solicitud de login\r",
+					"pm.sendRequest({\r",
+					"    url: loginUrl,\r",
+					"    method: 'POST',\r",
+					"    header: {\r",
+					"        'Content-Type': 'application/json'\r",
+					"    },\r",
+					"    body: {\r",
+					"        mode: 'raw',\r",
+					"        raw: JSON.stringify(loginPayload)\r",
+					"    }\r",
+					"}, function (err, res) {\r",
+					"    if (err || res.code !== 200) {\r",
+					"        console.error('Login failed', err || res);\r",
+					"        return;\r",
+					"    }\r",
+					"    \r",
+					"    // Guardar el token en variables de entorno para su uso en todas las solicitudes\r",
+					"    const token = res.json().user.token;\r",
+					"    pm.collectionVariables.set(\"accessToken\", token);\r",
+					"});"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:3000",
+			"type": "string"
+		},
+		{
+			"key": "fragance_endpoint",
+			"value": "/fragance",
+			"type": "string"
+		},
+		{
+			"key": "accessToken",
+			"value": "",
+			"type": "string"
+		}
+	]
+}

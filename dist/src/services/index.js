@@ -19,4 +19,4 @@ __exportStar(require("./auth.service"), exports);
 __exportStar(require("./container.service"), exports);
 __exportStar(require("./fragance.service"), exports);
 __exportStar(require("./candle.service"), exports);
-__exportStar(require("./shopcart.service"), exports);
+__exportStar(require("./shop_cart.service"), exports);

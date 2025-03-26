@@ -1,0 +1,652 @@
+{
+	"info": {
+		"_postman_id": "b0c21884-4139-45b4-8bc0-2b0b9e63a12c",
+		"name": "User",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "35085580",
+		"_collection_link": "https://bold-station-900888.postman.co/workspace/taller-node~183a1e08-ab26-4289-88af-c61b23688210/collection/39348548-b0c21884-4139-45b4-8bc0-2b0b9e63a12c?action=share&source=collection_link&creator=35085580"
+	},
+	"item": [
+		{
+			"name": "GetUsers",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}{{users_endpoint}}",
+					"host": [
+						"{{base_url}}{{users_endpoint}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GetUsers",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}{{users_endpoint}}",
+							"host": [
+								"{{base_url}}{{users_endpoint}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "924"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"39c-EzueC3WVdBQ7w2jh3SuSvXhLHyI\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 26 Mar 2025 14:14:04 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"_id\": \"67e21585ac94cf85a32b8985\",\n        \"name\": \"adminn\",\n        \"email\": \"admin@gmail.com\",\n        \"password\": \"$2b$10$cGK46nZQs4kJk3MymqvZJOumXq9axqD.JDTu7.9P9deMMw0OHozv2\",\n        \"roles\": [\n            {\n                \"_id\": \"67e213c2a1e655d1e77cf199\",\n                \"name\": \"admin\",\n                \"__v\": 0\n            }\n        ],\n        \"createdAt\": \"2025-03-25T02:31:33.599Z\",\n        \"updatedAt\": \"2025-03-26T14:12:03.842Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"67e379a0b218840123c5f403\",\n        \"name\": \"use1\",\n        \"email\": \"user1@gmail.com\",\n        \"password\": \"$2b$10$/71Z/rWUkKRZQJy8ys392uJnTTajwj4oags51/sRiKLUifedBfy.K\",\n        \"roles\": [\n            {\n                \"_id\": \"67e213c2a1e655d1e77cf198\",\n                \"name\": \"client\",\n                \"__v\": 0\n            }\n        ],\n        \"createdAt\": \"2025-03-26T03:50:56.316Z\",\n        \"updatedAt\": \"2025-03-26T03:50:56.316Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"67e409e54c76ed649154c88e\",\n        \"name\": \"pedrito\",\n        \"email\": \"pascalispunk@gmail.com\",\n        \"password\": \"$2b$10$NdugYS00dX6yFSLkMhmtXe43fEZfiZGjBdEd/ryt9N/Xm8TUbej0a\",\n        \"roles\": [\n            {\n                \"_id\": \"67e213c2a1e655d1e77cf198\",\n                \"name\": \"client\",\n                \"__v\": 0\n            }\n        ],\n        \"createdAt\": \"2025-03-26T14:06:29.572Z\",\n        \"updatedAt\": \"2025-03-26T14:06:29.572Z\",\n        \"__v\": 0\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "GetUser",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Verify user 'admin' information\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.name).to.eql(\"admin\");",
+							"    pm.expect(jsonData.email).to.eql(\"admin@gmail.com\");",
+							"    var userRoles = jsonData.roles.map(role => role.name);",
+							"    pm.expect(userRoles).to.include(\"admin\");",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}{{users_endpoint}}/67e21585ac94cf85a32b8985",
+					"host": [
+						"{{base_url}}{{users_endpoint}}"
+					],
+					"path": [
+						"67e21585ac94cf85a32b8985"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GetUser",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}{{users_endpoint}}/67e21585ac94cf85a32b8985",
+							"host": [
+								"{{base_url}}{{users_endpoint}}"
+							],
+							"path": [
+								"67e21585ac94cf85a32b8985"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "303"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"12f-UpT6s74Frz0F/mdfK1IMtaw5q6Y\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 26 Mar 2025 14:02:50 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"67e21585ac94cf85a32b8985\",\n    \"name\": \"admin\",\n    \"email\": \"admin@gmail.com\",\n    \"password\": \"$2b$10$cGK46nZQs4kJk3MymqvZJOumXq9axqD.JDTu7.9P9deMMw0OHozv2\",\n    \"roles\": [\n        {\n            \"_id\": \"67e213c2a1e655d1e77cf199\",\n            \"name\": \"admin\",\n            \"__v\": 0\n        }\n    ],\n    \"createdAt\": \"2025-03-25T02:31:33.599Z\",\n    \"updatedAt\": \"2025-03-25T02:31:33.599Z\",\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "CreateUser",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {",
+							"  pm.response.to.have.status(201);",
+							"});",
+							"",
+							"pm.test(\"El usuario 'user' se ha creado correctamente\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.name).to.eql(\"pedrito\");",
+							"    pm.expect(jsonData.email).to.eql(\"pascalispunk@gmail.com\");",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"pedrito\",\n    \"email\": \"pascalispunk@gmail.com\",\n    \"password\": \"1234567890\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}{{users_endpoint}}",
+					"host": [
+						"{{base_url}}{{users_endpoint}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "CreateUser",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"pedrito\",\n    \"email\": \"pascalispunk@gmail.com\",\n    \"password\": \"1234567890\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}{{users_endpoint}}",
+							"host": [
+								"{{base_url}}{{users_endpoint}}"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "313"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"139-eagNDGmlhlbm7l2xNuaF5X6iDm0\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 26 Mar 2025 14:06:29 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"name\": \"pedrito\",\n    \"email\": \"pascalispunk@gmail.com\",\n    \"password\": \"$2b$10$NdugYS00dX6yFSLkMhmtXe43fEZfiZGjBdEd/ryt9N/Xm8TUbej0a\",\n    \"roles\": [\n        {\n            \"_id\": \"67e213c2a1e655d1e77cf198\",\n            \"name\": \"client\",\n            \"__v\": 0\n        }\n    ],\n    \"_id\": \"67e409e54c76ed649154c88e\",\n    \"createdAt\": \"2025-03-26T14:06:29.572Z\",\n    \"updatedAt\": \"2025-03-26T14:06:29.572Z\",\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "UpdateUser",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"El usuario  se ha actualizado correctamente\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.name).to.eql(\"adminn\");",
+							"    pm.expect(jsonData.email).to.eql(\"admin@gmail.com\");",
+							"});",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"El usuario se ha actualizado correctamente\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.name).to.eql(\"admin\");",
+							"    pm.expect(jsonData.email).to.eql(\"admin@gmail.com\");",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"adminn\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}{{users_endpoint}}/67e21585ac94cf85a32b8985",
+					"host": [
+						"{{base_url}}{{users_endpoint}}"
+					],
+					"path": [
+						"67e21585ac94cf85a32b8985"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "UpdateUser",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"adminn\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}{{users_endpoint}}/67e21585ac94cf85a32b8985",
+							"host": [
+								"{{base_url}}{{users_endpoint}}"
+							],
+							"path": [
+								"67e21585ac94cf85a32b8985"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "244"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"f4-tecwTQbYkGS59HuoMBzh5ozglU8\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 26 Mar 2025 14:12:04 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"67e21585ac94cf85a32b8985\",\n    \"name\": \"adminn\",\n    \"email\": \"admin@gmail.com\",\n    \"password\": \"\",\n    \"roles\": [\n        {\n            \"_id\": \"67e213c2a1e655d1e77cf199\",\n            \"name\": \"admin\",\n            \"__v\": 0\n        }\n    ],\n    \"createdAt\": \"2025-03-25T02:31:33.599Z\",\n    \"updatedAt\": \"2025-03-26T14:12:03.842Z\",\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "DeleteUser",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {",
+							"    pm.response.to.have.status(204);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}{{users_endpoint}}/67e405884c76ed649154c862",
+					"host": [
+						"{{base_url}}{{users_endpoint}}"
+					],
+					"path": [
+						"67e405884c76ed649154c862"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "DeleteUser",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}{{users_endpoint}}/67e405884c76ed649154c862",
+							"host": [
+								"{{base_url}}{{users_endpoint}}"
+							],
+							"path": [
+								"67e405884c76ed649154c862"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "281"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"119-WcM9oisV9WSrmg661ZaUWgHTCaw\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 26 Mar 2025 14:05:32 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"67e405884c76ed649154c862\",\n    \"name\": \"pedrito\",\n    \"email\": \"pascalispunk@gmail.com\",\n    \"password\": \"$2b$10$fs02YUlf5K96x4.IGGZLUOsZTOGLlyLjizJNFVSCZZGMPKeouBub2\",\n    \"roles\": [\n        \"67e213c2a1e655d1e77cf198\"\n    ],\n    \"createdAt\": \"2025-03-26T13:47:52.803Z\",\n    \"updatedAt\": \"2025-03-26T13:47:52.803Z\",\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "GetDeletedUser",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}{{users_endpoint}}/67e0cc7ddb01def7fc460182",
+					"host": [
+						"{{base_url}}{{users_endpoint}}"
+					],
+					"path": [
+						"67e0cc7ddb01def7fc460182"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GetDeletedUser",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}{{users_endpoint}}/67e0cc7ddb01def7fc460182",
+							"host": [
+								"{{base_url}}{{users_endpoint}}"
+							],
+							"path": [
+								"67e0cc7ddb01def7fc460182"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "61"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3d-2/FrX0yQzuuQnZ89pkR2g/Usl+E\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 26 Mar 2025 14:12:27 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"User with id 67e0cc7ddb01def7fc460182 not found\"\n}"
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{accessToken}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"const loginUrl = `${pm.collectionVariables.get(\"base_url\")}/auth/login`;",
+					"const loginPayload = {",
+					"    email: 'admin@gmail.com',",
+					"    password: '1234567890'",
+					"};",
+					"",
+					"// Realizar la solicitud de login",
+					"pm.sendRequest({",
+					"    url: loginUrl,",
+					"    method: 'POST',",
+					"    header: {",
+					"        'Content-Type': 'application/json'",
+					"    },",
+					"    body: {",
+					"        mode: 'raw',",
+					"        raw: JSON.stringify(loginPayload)",
+					"    }",
+					"}, function (err, res) {",
+					"    if (err || res.code !== 200) {",
+					"        console.error('Login failed', err || res);",
+					"        return;",
+					"    }",
+					"    ",
+					"    // Guardar el token en variables de entorno para su uso en todas las solicitudes",
+					"    const token = res.json().user.token;",
+					"    pm.collectionVariables.set(\"accessToken\", token);",
+					"});"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:3000",
+			"type": "string"
+		},
+		{
+			"key": "users_endpoint",
+			"value": "/user",
+			"type": "string"
+		},
+		{
+			"key": "accessToken",
+			"value": "",
+			"type": "string"
+		}
+	]
+}

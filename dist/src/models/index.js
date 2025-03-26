@@ -19,5 +19,5 @@ __exportStar(require("./role.model"), exports);
 __exportStar(require("./fragance.model"), exports);
 __exportStar(require("./container.model"), exports);
 __exportStar(require("./candle.model"), exports);
-__exportStar(require("./cartitem.model"), exports);
-__exportStar(require("./shopcart.model"), exports);
+__exportStar(require("./cart_item.model"), exports);
+__exportStar(require("./shop_cart.model"), exports);

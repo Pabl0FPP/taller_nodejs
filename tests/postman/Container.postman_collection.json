@@ -1,0 +1,527 @@
+{
+	"info": {
+		"_postman_id": "391a2fd6-36df-4263-8692-c82e197f00b6",
+		"name": "Container",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "35085580",
+		"_collection_link": "https://bold-station-900888.postman.co/workspace/taller-node~183a1e08-ab26-4289-88af-c61b23688210/collection/39348548-391a2fd6-36df-4263-8692-c82e197f00b6?action=share&source=collection_link&creator=35085580"
+	},
+	"item": [
+		{
+			"name": "GetContainer",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}{{container_endpoint}}/67e39ca40b5e0ce61344d0fa",
+					"host": [
+						"{{base_url}}{{container_endpoint}}"
+					],
+					"path": [
+						"67e39ca40b5e0ce61344d0fa"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GetContainer",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}{{container_endpoint}}/67e39ca40b5e0ce61344d0fa",
+							"host": [
+								"{{base_url}}{{container_endpoint}}"
+							],
+							"path": [
+								"67e39ca40b5e0ce61344d0fa"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "209"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"d1-AYF4i1DKIyBZKqsWzBvTRPXa9l4\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 26 Mar 2025 13:45:19 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"67e39ca40b5e0ce61344d0fa\",\n    \"material\": \"wood\",\n    \"height\": 3,\n    \"width\": 3,\n    \"description\": \"descripcion de material de madera\",\n    \"createdAt\": \"2025-03-26T06:20:20.466Z\",\n    \"updatedAt\": \"2025-03-26T13:44:37.390Z\",\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "GetContainers",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}{{container_endpoint}}",
+					"host": [
+						"{{base_url}}{{container_endpoint}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GetContainers",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}{{container_endpoint}}",
+							"host": [
+								"{{base_url}}{{container_endpoint}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "415"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"19f-5VxoOYgu1GYNaIWBU0wyBTZ+w3E\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 26 Mar 2025 13:45:28 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"_id\": \"67e39ca40b5e0ce61344d0fa\",\n        \"material\": \"wood\",\n        \"height\": 3,\n        \"width\": 3,\n        \"description\": \"descripcion de material de madera\",\n        \"createdAt\": \"2025-03-26T06:20:20.466Z\",\n        \"updatedAt\": \"2025-03-26T13:44:37.390Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"67e404444c76ed649154c855\",\n        \"material\": \"glass\",\n        \"height\": 5,\n        \"width\": 3,\n        \"description\": \"descripcion de materiaaaal\",\n        \"createdAt\": \"2025-03-26T13:42:28.414Z\",\n        \"updatedAt\": \"2025-03-26T13:42:28.414Z\",\n        \"__v\": 0\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "CreateContainer",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"  pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"material\": \"glass\",\r\n    \"height\": 5,\r\n    \"width\": 3,\r\n    \"description\": \"descripcion de materiaaaal\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}{{container_endpoint}}",
+					"host": [
+						"{{base_url}}{{container_endpoint}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "CreateContainer",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"material\": \"glass\",\r\n    \"height\": 5,\r\n    \"width\": 3,\r\n    \"description\": \"descripcion de materiaaaal\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}{{container_endpoint}}",
+							"host": [
+								"{{base_url}}{{container_endpoint}}"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "203"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"cb-qkFxJyclW70zeHz7K1xDK2ibSs4\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 26 Mar 2025 13:42:28 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"material\": \"glass\",\n    \"height\": 5,\n    \"width\": 3,\n    \"description\": \"descripcion de materiaaaal\",\n    \"_id\": \"67e404444c76ed649154c855\",\n    \"createdAt\": \"2025-03-26T13:42:28.414Z\",\n    \"updatedAt\": \"2025-03-26T13:42:28.414Z\",\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "UpdateContainer",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"material\": \"wood\",\r\n    \"height\": 3,\r\n    \"width\": 3,\r\n    \"description\": \"descripcion de material de madera\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}{{container_endpoint}}/67e39ca40b5e0ce61344d0fa",
+					"host": [
+						"{{base_url}}{{container_endpoint}}"
+					],
+					"path": [
+						"67e39ca40b5e0ce61344d0fa"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "UpdateContainer",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"material\": \"wood\",\r\n    \"height\": 3,\r\n    \"width\": 3,\r\n    \"description\": \"descripcion de material de madera\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}{{container_endpoint}}/67e39ca40b5e0ce61344d0fa",
+							"host": [
+								"{{base_url}}{{container_endpoint}}"
+							],
+							"path": [
+								"67e39ca40b5e0ce61344d0fa"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "209"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"d1-AYF4i1DKIyBZKqsWzBvTRPXa9l4\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 26 Mar 2025 13:44:37 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"67e39ca40b5e0ce61344d0fa\",\n    \"material\": \"wood\",\n    \"height\": 3,\n    \"width\": 3,\n    \"description\": \"descripcion de material de madera\",\n    \"createdAt\": \"2025-03-26T06:20:20.466Z\",\n    \"updatedAt\": \"2025-03-26T13:44:37.390Z\",\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "DeleteContainer",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {\r",
+							"    pm.response.to.have.status(204);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}{{container_endpoint}}/67e404444c76ed649154c855",
+					"host": [
+						"{{base_url}}{{container_endpoint}}"
+					],
+					"path": [
+						"67e404444c76ed649154c855"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "DeleteContainer",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}{{container_endpoint}}/67e404444c76ed649154c855",
+							"host": [
+								"{{base_url}}{{container_endpoint}}"
+							],
+							"path": [
+								"67e404444c76ed649154c855"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "203"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"cb-IZzTtOrN/NZScWdqRcbumJIXR+M\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 26 Mar 2025 13:54:00 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"67e404444c76ed649154c855\",\n    \"material\": \"glass\",\n    \"height\": 5,\n    \"width\": 3,\n    \"description\": \"descripcion de materiaaaal\",\n    \"createdAt\": \"2025-03-26T13:42:28.414Z\",\n    \"updatedAt\": \"2025-03-26T13:42:28.414Z\",\n    \"__v\": 0\n}"
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{accessToken}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"const loginUrl = `${pm.collectionVariables.get(\"base_url\")}/auth/login`;\r",
+					"const loginPayload = {\r",
+					"    email: 'admin@gmail.com',\r",
+					"    password: '1234567890'\r",
+					"};\r",
+					"\r",
+					"// Realizar la solicitud de login\r",
+					"pm.sendRequest({\r",
+					"    url: loginUrl,\r",
+					"    method: 'POST',\r",
+					"    header: {\r",
+					"        'Content-Type': 'application/json'\r",
+					"    },\r",
+					"    body: {\r",
+					"        mode: 'raw',\r",
+					"        raw: JSON.stringify(loginPayload)\r",
+					"    }\r",
+					"}, function (err, res) {\r",
+					"    if (err || res.code !== 200) {\r",
+					"        console.error('Login failed', err || res);\r",
+					"        return;\r",
+					"    }\r",
+					"    \r",
+					"    // Guardar el token en variables de entorno para su uso en todas las solicitudes\r",
+					"    const token = res.json().user.token;\r",
+					"    pm.collectionVariables.set(\"accessToken\", token);\r",
+					"});"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:3000",
+			"type": "string"
+		},
+		{
+			"key": "container_endpoint",
+			"value": "/container",
+			"type": "string"
+		},
+		{
+			"key": "accessToken",
+			"value": "",
+			"type": "string"
+		}
+	]
+}

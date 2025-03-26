@@ -1,0 +1,264 @@
+{
+	"info": {
+		"_postman_id": "a94ed8ba-9353-4a53-ac57-e311947a1287",
+		"name": "Candle",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "35085580",
+		"_collection_link": "https://bold-station-900888.postman.co/workspace/taller-node~183a1e08-ab26-4289-88af-c61b23688210/collection/39348548-a94ed8ba-9353-4a53-ac57-e311947a1287?action=share&source=collection_link&creator=35085580"
+	},
+	"item": [
+		{
+			"name": "CreateCandle",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"  pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id_container\": \"67e39ca40b5e0ce61344d0fa\",\r\n  \"id_fragance\": \"67e394450b5e0ce61344d0f2\",\r\n  \"image_url\": \"https://ejemplo.com/vela1.jpg\",\r\n  \"text\": \"Texto personalizado para la vela 2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}{{candle_endpoint}}",
+					"host": [
+						"{{base_url}}{{candle_endpoint}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "CreateCandle",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id_container\": \"67e39ca40b5e0ce61344d0fa\",\r\n  \"id_fragance\": \"67e394450b5e0ce61344d0f2\",\r\n  \"image_url\": \"https://ejemplo.com/vela1.jpg\",\r\n  \"text\": \"Texto personalizado para la vela 2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}{{candle_endpoint}}",
+							"host": [
+								"{{base_url}}{{candle_endpoint}}"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2519"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"9d7-VAvnuFF/cA8P1h2gpxcIFoL+3ng\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 26 Mar 2025 13:21:55 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"candle\": {\n        \"id_container\": \"67e39ca40b5e0ce61344d0fa\",\n        \"id_fragance\": \"67e394450b5e0ce61344d0f2\",\n        \"image_url\": \"https://ejemplo.com/vela1.jpg\",\n        \"text\": \"Texto personalizado para la vela 2\",\n        \"_id\": \"67e3ff724c76ed649154c82a\",\n        \"createdAt\": \"2025-03-26T13:21:54.485Z\",\n        \"updatedAt\": \"2025-03-26T13:21:54.485Z\",\n        \"__v\": 0\n    },\n    \"cart\": {\n        \"_id\": \"67e3a1126c12d80679414d13\",\n        \"id_user\": \"67e21585ac94cf85a32b8985\",\n        \"items\": [\n            {\n                \"_id\": {\n                    \"_id\": \"67e3a1126c12d80679414d10\",\n                    \"id_container\": {\n                        \"_id\": \"67e39ca40b5e0ce61344d0fa\",\n                        \"material\": \"material1\",\n                        \"height\": 3,\n                        \"width\": 3,\n                        \"description\": \"descripcion de material1\",\n                        \"createdAt\": \"2025-03-26T06:20:20.466Z\",\n                        \"updatedAt\": \"2025-03-26T06:20:20.466Z\",\n                        \"__v\": 0\n                    },\n                    \"id_fragance\": {\n                        \"_id\": \"67e394450b5e0ce61344d0f2\",\n                        \"name\": \"fragance1\",\n                        \"description\": \"es la fragance 1\",\n                        \"color\": \"blue\",\n                        \"image_url\": \"fragance1.jpg\",\n                        \"createdAt\": \"2025-03-26T05:44:37.770Z\",\n                        \"updatedAt\": \"2025-03-26T05:44:37.770Z\",\n                        \"__v\": 0\n                    },\n                    \"image_url\": \"https://ejemplo.com/vela.jpg\",\n                    \"text\": \"Texto personalizado para la vela 1\",\n                    \"createdAt\": \"2025-03-26T06:39:14.192Z\",\n                    \"updatedAt\": \"2025-03-26T06:39:14.192Z\",\n                    \"__v\": 0\n                },\n                \"quantity\": 1\n            },\n            {\n                \"_id\": {\n                    \"_id\": \"67e3a6028955e07a68922c1b\",\n                    \"id_container\": {\n                        \"_id\": \"67e39ca40b5e0ce61344d0fa\",\n                        \"material\": \"material1\",\n                        \"height\": 3,\n                        \"width\": 3,\n                        \"description\": \"descripcion de material1\",\n                        \"createdAt\": \"2025-03-26T06:20:20.466Z\",\n                        \"updatedAt\": \"2025-03-26T06:20:20.466Z\",\n                        \"__v\": 0\n                    },\n                    \"id_fragance\": {\n                        \"_id\": \"67e394450b5e0ce61344d0f2\",\n                        \"name\": \"fragance1\",\n                        \"description\": \"es la fragance 1\",\n                        \"color\": \"blue\",\n                        \"image_url\": \"fragance1.jpg\",\n                        \"createdAt\": \"2025-03-26T05:44:37.770Z\",\n                        \"updatedAt\": \"2025-03-26T05:44:37.770Z\",\n                        \"__v\": 0\n                    },\n                    \"image_url\": \"https://ejemplo.com/vela1.jpg\",\n                    \"text\": \"Texto personalizado para la vela 2\",\n                    \"createdAt\": \"2025-03-26T07:00:18.600Z\",\n                    \"updatedAt\": \"2025-03-26T07:00:18.600Z\",\n                    \"__v\": 0\n                },\n                \"quantity\": 1\n            },\n            {\n                \"_id\": {\n                    \"_id\": \"67e3ff724c76ed649154c82a\",\n                    \"id_container\": {\n                        \"_id\": \"67e39ca40b5e0ce61344d0fa\",\n                        \"material\": \"material1\",\n                        \"height\": 3,\n                        \"width\": 3,\n                        \"description\": \"descripcion de material1\",\n                        \"createdAt\": \"2025-03-26T06:20:20.466Z\",\n                        \"updatedAt\": \"2025-03-26T06:20:20.466Z\",\n                        \"__v\": 0\n                    },\n                    \"id_fragance\": {\n                        \"_id\": \"67e394450b5e0ce61344d0f2\",\n                        \"name\": \"fragance1\",\n                        \"description\": \"es la fragance 1\",\n                        \"color\": \"blue\",\n                        \"image_url\": \"fragance1.jpg\",\n                        \"createdAt\": \"2025-03-26T05:44:37.770Z\",\n                        \"updatedAt\": \"2025-03-26T05:44:37.770Z\",\n                        \"__v\": 0\n                    },\n                    \"image_url\": \"https://ejemplo.com/vela1.jpg\",\n                    \"text\": \"Texto personalizado para la vela 2\",\n                    \"createdAt\": \"2025-03-26T13:21:54.485Z\",\n                    \"updatedAt\": \"2025-03-26T13:21:54.485Z\",\n                    \"__v\": 0\n                },\n                \"quantity\": 1\n            }\n        ],\n        \"createdAt\": \"2025-03-26T06:39:14.410Z\",\n        \"updatedAt\": \"2025-03-26T13:21:54.836Z\",\n        \"__v\": 3\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "GetCandle",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}{{candle_endpoint}}/67e39f01da3e854595ae9c71",
+					"host": [
+						"{{base_url}}{{candle_endpoint}}"
+					],
+					"path": [
+						"67e39f01da3e854595ae9c71"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GetCandles",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}{{candle_endpoint}}/67e39f01da3e854595ae9c71",
+							"host": [
+								"{{base_url}}{{candle_endpoint}}"
+							],
+							"path": [
+								"67e39f01da3e854595ae9c71"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "662"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"296-4/eF3gTFn3CQLdhZEohgy438E2E\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 26 Mar 2025 13:52:01 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"67e39f01da3e854595ae9c71\",\n    \"id_container\": {\n        \"_id\": \"67e39ca40b5e0ce61344d0fa\",\n        \"material\": \"wood\",\n        \"height\": 3,\n        \"width\": 3,\n        \"description\": \"descripcion de material de madera\",\n        \"createdAt\": \"2025-03-26T06:20:20.466Z\",\n        \"updatedAt\": \"2025-03-26T13:44:37.390Z\",\n        \"__v\": 0\n    },\n    \"id_fragance\": {\n        \"_id\": \"67e394450b5e0ce61344d0f2\",\n        \"name\": \"fragance1\",\n        \"description\": \"es la fragance 1\",\n        \"color\": \"blue\",\n        \"image_url\": \"fragance1.jpg\",\n        \"createdAt\": \"2025-03-26T05:44:37.770Z\",\n        \"updatedAt\": \"2025-03-26T05:44:37.770Z\",\n        \"__v\": 0\n    },\n    \"image_url\": \"https://ejemplo.com/vela.jpg\",\n    \"text\": \"Texto personalizado para la vela 1\",\n    \"createdAt\": \"2025-03-26T06:30:25.286Z\",\n    \"updatedAt\": \"2025-03-26T06:30:25.286Z\",\n    \"__v\": 0\n}"
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{accessToken}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"const loginUrl = `${pm.collectionVariables.get(\"base_url\")}/auth/login`;\r",
+					"const loginPayload = {\r",
+					"    email: 'admin@gmail.com',\r",
+					"    password: '1234567890'\r",
+					"};\r",
+					"\r",
+					"// Realizar la solicitud de login\r",
+					"pm.sendRequest({\r",
+					"    url: loginUrl,\r",
+					"    method: 'POST',\r",
+					"    header: {\r",
+					"        'Content-Type': 'application/json'\r",
+					"    },\r",
+					"    body: {\r",
+					"        mode: 'raw',\r",
+					"        raw: JSON.stringify(loginPayload)\r",
+					"    }\r",
+					"}, function (err, res) {\r",
+					"    if (err || res.code !== 200) {\r",
+					"        console.error('Login failed', err || res);\r",
+					"        return;\r",
+					"    }\r",
+					"    \r",
+					"    // Guardar el token en variables de entorno para su uso en todas las solicitudes\r",
+					"    const token = res.json().user.token;\r",
+					"    pm.collectionVariables.set(\"accessToken\", token);\r",
+					"});"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:3000",
+			"type": "string"
+		},
+		{
+			"key": "candle_endpoint",
+			"value": "/candle",
+			"type": "string"
+		},
+		{
+			"key": "accessToken",
+			"value": "",
+			"type": "string"
+		}
+	]
+}

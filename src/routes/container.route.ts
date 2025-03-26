@@ -4,11 +4,10 @@ import { Router } from "express";
 
 export const containerRouter = Router();
 
-containerRouter.post("/", [authenticateJWT, isAdmin], containerController.create);
-containerRouter.get("/", [authenticateJWT, isAdmin], containerController.getAll);
-containerRouter.get("/search", [authenticateJWT, isAdmin], containerController.get);
-containerRouter.get("/:id", [authenticateJWT, isAdmin], containerController.getById);
-containerRouter.put("/:id", [authenticateJWT, isAdmin], containerController.update);
-containerRouter.delete("/:id", [authenticateJWT, isAdmin], containerController.delete);
+containerRouter.post("/", [authenticateJWT, isAdmin], containerController.createContainer);
+containerRouter.get("/", [authenticateJWT, isAdmin], containerController.getAllContainers);
+containerRouter.get("/:id", [authenticateJWT, isAdmin], containerController.getContainer);
+containerRouter.put("/:id", [authenticateJWT, isAdmin], containerController.updateContainer);
+containerRouter.delete("/:id", [authenticateJWT, isAdmin], containerController.deleteContainer);
 
 

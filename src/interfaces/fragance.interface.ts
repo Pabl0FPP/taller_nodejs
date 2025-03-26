@@ -1,5 +1,4 @@
 export interface FraganceInput {
-    id_fragance: string;
     name: string,
     description: string,
     color: string,

@@ -1,5 +1,4 @@
 export interface ContainerInput {
-    id_container: string,
     material: string,
     height: number,
     width: number,

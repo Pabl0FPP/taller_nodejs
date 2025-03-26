@@ -27,4 +27,4 @@ db.then( () =>
 );
 
 
-export { app, db };
+export default app;

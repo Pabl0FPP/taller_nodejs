@@ -2,7 +2,7 @@ import express, { Express, Request, Response } from 'express';
 import dotenv from 'dotenv';
 import { userRouter, authRouter, containerRouter, fraganceRouter, candleRouter, shopcartRouter} from './routes';
 import { db } from "./lib/connectionDB";
-import { createRoles } from './lib/initialSetup';
+import { createRoles } from './lib/initial_Setup';
 
 dotenv.config();
 

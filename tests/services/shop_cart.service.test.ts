@@ -1,4 +1,4 @@
-import { shopcartService } from '../../src/services/shopcart.service';
+import { shopcartService } from '../../src/services/shop_cart.service';
 import { UserModel, CandleModel, ShopCartModel } from '../../src/models';
 import { Types } from 'mongoose';
 

@@ -6,7 +6,7 @@
     "test": "jest",
     "build": "tsc",
     "start": "node dist/index.js",
-    "dev": "nodemon src/index.ts"
+    "dev": "nodemon dist/index.ts"
   },
   "repository": "https://github.com/Pabl0FPP/taller_nodejs.git",
   "author": "Pablo Pineda <pinedapablo6718@gmail.com>",

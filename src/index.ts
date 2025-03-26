@@ -1,6 +1,6 @@
 import express, { Express, Request, Response } from 'express';
 import dotenv from 'dotenv';
-import { userRouter, authRouter} from './routes';
+import { userRouter, authRouter, containerRouter, fraganceRouter, candleRouter} from './routes';
 import { db } from "./lib/connectionDB";
 import { createRoles } from './lib/initialSetup';
 
@@ -15,6 +15,9 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use('/user', userRouter);
 app.use('/auth', authRouter);
+app.use('/container', containerRouter);
+app.use('/fragance', fraganceRouter);
+app.use('/candle', candleRouter);
 
 
 db.then( () =>

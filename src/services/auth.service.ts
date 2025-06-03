@@ -66,6 +66,15 @@ class AuthService{
             throw error;
         }
     }
+
+    public async verifyToken(token: string): Promise<any> {
+        try {
+            const decoded = jwt.verify(token, process.env.JWT_SECRET || 'secret') as any;
+            return decoded.user; 
+        } catch (error) {
+            throw new Error('Invalid token');
+        }
+    }
 }
 
 export const authService = new AuthService();

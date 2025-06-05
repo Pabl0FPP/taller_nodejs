@@ -9,6 +9,7 @@ import { db } from './lib/connection_DB';
 import { createRoles } from './lib/initial_Setup';
 import { resolvers } from './graphql/resolvers';
 import { authService } from './services/auth.service';
+import { GraphQLError } from 'graphql';
 
 dotenv.config();
 
@@ -24,6 +25,14 @@ async function startServer() {
   const server = new ApolloServer({
     typeDefs,
     resolvers,
+    formatError: (error) => {
+      // Devuelve solo el mensaje de error al cliente
+      return new GraphQLError(error.message, {
+        extensions: {
+          code: error.extensions?.code || 'INTERNAL_SERVER_ERROR',
+        },
+      });
+    },
   });
 
   await server.start();

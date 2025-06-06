@@ -16,10 +16,11 @@ dotenv.config();
 const app: Express = express();
 const port: number = Number(process.env.PORT) || 3000;
 
-const typeDefs = readFileSync(
-  join(__dirname, 'graphql', 'schema.graphql'),
-  'utf-8'
-);
+const schemaPath = process.env.NODE_ENV === 'production'
+  ? join(process.cwd(), 'src', 'graphql', 'schema.graphql')
+  : join(__dirname, 'graphql', 'schema.graphql');
+
+const typeDefs = readFileSync(schemaPath, 'utf-8');
 
 async function startServer() {
   const server = new ApolloServer({

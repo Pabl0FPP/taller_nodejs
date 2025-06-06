@@ -16,19 +16,8 @@ dotenv.config();
 const app: Express = express();
 const port: number = Number(process.env.PORT) || 3000;
 
-// Try multiple possible locations for the schema file
-const possiblePaths = [
-  join(__dirname, 'graphql', 'schema.graphql'),
-  join(__dirname, '..', '..', 'src', 'graphql', 'schema.graphql'),
-  join(process.cwd(), 'src', 'graphql', 'schema.graphql')
-];
-
-let schemaPath = possiblePaths.find(path => existsSync(path));
-if (!schemaPath) {
-  throw new Error('Could not find schema.graphql file');
-}
-
-const typeDefs = readFileSync(schemaPath, 'utf-8');
+// Use a relative path from the project root
+const typeDefs = readFileSync('./src/graphql/schema.graphql', 'utf-8');
 
 async function startServer() {
   const server = new ApolloServer({

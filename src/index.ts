@@ -2,12 +2,11 @@ import express, { Express, RequestHandler } from 'express';
 import dotenv from 'dotenv';
 import { ApolloServer } from '@apollo/server';
 import { expressMiddleware } from '@apollo/server/express4';
-import { readFileSync, existsSync } from 'fs';
-import { join } from 'path';
 import { userRouter, authRouter, containerRouter, fraganceRouter, candleRouter, shopcartRouter } from './routes';
 import { db } from './lib/connection_DB';
 import { createRoles } from './lib/initial_Setup';
 import { resolvers } from './graphql/resolvers';
+import { typeDefs } from './graphql/schema';
 import { authService } from './services/auth.service';
 import { GraphQLError } from 'graphql';
 
@@ -15,9 +14,6 @@ dotenv.config();
 
 const app: Express = express();
 const port: number = Number(process.env.PORT) || 3000;
-
-// Use a relative path from the project root
-const typeDefs = readFileSync('./src/graphql/schema.graphql', 'utf-8');
 
 async function startServer() {
   const server = new ApolloServer({

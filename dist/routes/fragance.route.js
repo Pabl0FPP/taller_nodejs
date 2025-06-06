@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.fraganceRouter = void 0;
+const controllers_1 = require("../controllers");
+const middleware_1 = require("../middleware");
+const express_1 = require("express");
+exports.fraganceRouter = (0, express_1.Router)();
+exports.fraganceRouter.post("/", [middleware_1.authenticateJWT, middleware_1.isAdmin], controllers_1.fraganceController.createFragance);
+exports.fraganceRouter.get("/", [middleware_1.authenticateJWT, middleware_1.isAdmin], controllers_1.fraganceController.getAllFragances);
+exports.fraganceRouter.get("/:id", [middleware_1.authenticateJWT, middleware_1.isAdmin], controllers_1.fraganceController.getFragance);
+exports.fraganceRouter.put("/:id", [middleware_1.authenticateJWT, middleware_1.isAdmin], controllers_1.fraganceController.updateFragance);
+exports.fraganceRouter.delete("/:id", [middleware_1.authenticateJWT, middleware_1.isAdmin], controllers_1.fraganceController.deleteFragance);

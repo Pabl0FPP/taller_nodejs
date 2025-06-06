@@ -2,7 +2,7 @@ import express, { Express, RequestHandler } from 'express';
 import dotenv from 'dotenv';
 import { ApolloServer } from '@apollo/server';
 import { expressMiddleware } from '@apollo/server/express4';
-import { readFileSync } from 'fs';
+import { readFileSync, existsSync } from 'fs';
 import { join } from 'path';
 import { userRouter, authRouter, containerRouter, fraganceRouter, candleRouter, shopcartRouter } from './routes';
 import { db } from './lib/connection_DB';
@@ -16,9 +16,17 @@ dotenv.config();
 const app: Express = express();
 const port: number = Number(process.env.PORT) || 3000;
 
-const schemaPath = process.env.NODE_ENV === 'production'
-  ? join(process.cwd(), 'src', 'graphql', 'schema.graphql')
-  : join(__dirname, 'graphql', 'schema.graphql');
+// Try multiple possible locations for the schema file
+const possiblePaths = [
+  join(__dirname, 'graphql', 'schema.graphql'),
+  join(__dirname, '..', '..', 'src', 'graphql', 'schema.graphql'),
+  join(process.cwd(), 'src', 'graphql', 'schema.graphql')
+];
+
+let schemaPath = possiblePaths.find(path => existsSync(path));
+if (!schemaPath) {
+  throw new Error('Could not find schema.graphql file');
+}
 
 const typeDefs = readFileSync(schemaPath, 'utf-8');
 

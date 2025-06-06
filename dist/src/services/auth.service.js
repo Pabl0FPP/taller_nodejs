@@ -79,5 +79,16 @@ class AuthService {
             throw error;
         }
     }
+    verifyToken(token) {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                const decoded = jsonwebtoken_1.default.verify(token, process.env.JWT_SECRET || 'secret');
+                return decoded.user;
+            }
+            catch (error) {
+                throw new Error('Invalid token');
+            }
+        });
+    }
 }
 exports.authService = new AuthService();

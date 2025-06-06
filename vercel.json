@@ -4,7 +4,12 @@
     {
       "src": "dist/src/index.js",
       "use": "@vercel/node",
-      "config": { "includeFiles": ["dist/src/**"] }
+      "config": { 
+        "includeFiles": [
+          "dist/src/**",
+          "src/graphql/schema.graphql"
+        ]
+      }
     }
   ],
   "routes": [

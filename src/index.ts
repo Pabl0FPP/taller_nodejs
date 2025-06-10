@@ -43,7 +43,7 @@ async function startServer() {
   app.use('/candle', candleRouter);
   app.use('/cart', shopcartRouter);
 
-  // GraphQL middlewareEEE
+  // GraphQL middlewareEEEe
   const graphqlMiddleware: RequestHandler = expressMiddleware(server, {
     context: async ({ req }) => {
       const token = req.headers.authorization?.replace('Bearer ', '');
